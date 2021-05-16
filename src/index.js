@@ -14,7 +14,7 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 client.cooldowns = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./commands').filter((file) => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./src/commands').filter((file) => file.endsWith('.js'));
 
 const commandLoadPromises = commandFiles.map((file) => import(`./commands/${file}`).then((module) => {
   const command = module.default;
