@@ -13,6 +13,9 @@ export default {
     let comicNumber = await searchExplainXkcd(searchQuery, 'title');
     if (comicNumber === -1) {
       comicNumber = await searchExplainXkcd(searchQuery, 'keyword');
+      if (comicNumber === -1) {
+        message.reply(':( could not find any relevant comic');
+      }
     }
     const imageUrl = await getXkcdComic(comicNumber);
     message.channel.send(`${imageUrl}`);
