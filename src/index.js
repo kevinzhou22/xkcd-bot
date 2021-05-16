@@ -72,11 +72,9 @@ client.on('message', (message) => {
   setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
   // execute the commands
-  try {
-    command.execute(message, args);
-  } catch (error) {
+  command.execute(message, args).catch(() => {
     message.reply('Something went wrong trying to execute that command!');
-  }
+  });
 });
 
 Promise.all(commandLoadPromises).then(() => {
