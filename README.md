@@ -20,5 +20,5 @@ Afterwards, enter `/xkcd KEYWORDS` in a message to get the XKCD bot to search fo
 ![using the XKCD bot](docs/xkcd-bot-example.png)
 
 ## License
-[ISC](https://choosealicense.com/licenses/isc/)
+[MIT](https://choosealicense.com/licenses/mit/)
 
