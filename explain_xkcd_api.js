@@ -2,13 +2,25 @@ import axios from 'axios';
 
 /*
  Searches the explain XKCD wiki and returns the first valid comic's title number as a string.
+
+ Valid values for searchMethod: 'keyword', 'title'
+
  Returns -1 if the search does not find anything
 */
-const searchExplainXkcd = async function searchExplainXkcd(keywords) {
+const searchExplainXkcd = async function searchExplainXkcd(keywords, searchMethod) {
+  let urlSrwhat;
+  if (searchMethod === 'keyword') {
+    urlSrwhat = 'text';
+  } else if (searchMethod === 'title') {
+    urlSrwhat = 'title';
+  } else {
+    throw new Error('invalid search method provided');
+  }
+
   const urlEncodedKeywords = encodeURIComponent(keywords);
   const parameters = {
     method: 'get',
-    url: `https://www.explainxkcd.com/wiki/api.php?action=query&list=search&srwhat=text&format=json&srsearch=${urlEncodedKeywords}`,
+    url: `https://www.explainxkcd.com/wiki/api.php?action=query&list=search&srwhat=${urlSrwhat}&format=json&srsearch=${urlEncodedKeywords}`,
   };
 
   let response;
