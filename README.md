@@ -10,28 +10,9 @@ Based off the idea that there's an XKCD comic for everything, this bot lets user
 
 ## Getting Started 
 
-To clone and run this bot, you will need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/) installed on your computer.
-
-From your command line:
-```
-# Clone this repository
-$ git clone https://github.com/kevinzhou22/xkcd-bot.git
-
-# Go into the repository
-$ cd xkcd-bot
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
-```
-
-Afterwards, to see the bot in action, add the bot to a server using this [link](https://discord.com/api/oauth2/authorize?client_id=841341366780952596&permissions=52224&scope=bot).
-
+To use this bot, you will need to first add this [bot](https://discord.com/api/oauth2/authorize?client_id=841341366780952596&permissions=52224&scope=bot) to your Discord channel.
 
 In the server where the bot was added, enter `/xkcd KEYWORDS` in a message to get the XKCD bot to search for relevant XKCD comics.
-
 
 ## Screenshot
 ![using the XKCD bot](docs/xkcd-bot-example.png)
